@@ -59,12 +59,14 @@ class BurgerBuidler extends Component {
   };
 
   render() {
+    // TODO: Add button disabled when there is no ingredients type 117
     return (
       <Aux>
         <Burger ing={this.state.ingredients} />
         <BuildControls
           ingredientAdd={this.addIngredientHandler}
           ingredientRemove={this.removeIngredientHandler}
+          price={this.state.totalPrice}
         />
       </Aux>
     );
