@@ -14,9 +14,14 @@ const Burger = props => {
     }
   });
 
-  const ingredients = transformedIngredients.map((ingredient, index) => {
+  let ingredients;
+  ingredients = transformedIngredients.map((ingredient, index) => {
     return <BurgerIngredient key={ingredient + index} type={ingredient} />;
   });
+
+  if (ingredients.length === 0) {
+    ingredients = <p>Please Add Some Ingredient</p>;
+  }
 
   return (
     <div className={classes.Burger}>
